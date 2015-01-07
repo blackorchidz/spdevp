@@ -22,7 +22,9 @@
 
         //oauth
         $scope.googleLogin = function () {
-            $cordovaOauth.google("CLIENT_ID_HERE", ["https://www.googleapis.com/auth/urlshortener", "https://www.googleapis.com/auth/userinfo.email"]).then(function (result) {
+            $cordovaOauth.google("526535717592-1s7la39v2m54p5s5fb4kpq2at9d8fg8o.apps.googleusercontent.com",
+                ["https://www.googleapis.com/auth/urlshortener", "https://www.googleapis.com/auth/userinfo.email"])
+                .then(function (result) {
                 $scope.oauthResult = result;
             }, function (error) {
                 $scope.oauthResult = "OAUTH ERROR (see console)";

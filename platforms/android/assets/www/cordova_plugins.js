@@ -65,7 +65,8 @@ module.exports.metadata =
     "org.apache.cordova.device": "0.2.13",
     "com.phonegap.plugins.barcodescanner": "2.0.1",
     "org.apache.cordova.inappbrowser": "0.5.5-dev",
-    "org.apache.cordova.camera": "0.3.4"
+    "org.apache.cordova.camera": "0.3.4",
+    "org.apache.cordova.geolocation": "0.3.11"
 }
 // BOTTOM OF METADATA
 });

@@ -22,16 +22,14 @@
 
         //oauth
         $scope.googleLogin = function () {
-            $cordovaOauth.google("53403813997-23amgkdaart0ddsmatqevtt5dv56luh0.apps.googleusercontent.com",
-                ["oauth2:https://www.googleapis.com/auth/plus.me",
-                    "https://www.googleapis.com/auth/userinfo.profile"])
+            $cordovaOauth.google("526535717592-1s7la39v2m54p5s5fb4kpq2at9d8fg8o.apps.googleusercontent.com",
+                ["https://www.googleapis.com/auth/urlshortener", "https://www.googleapis.com/auth/userinfo.email"])
                 .then(function (result) {
-                    console.log("Oauth Result=", result)
-                    $scope.oauthResult = result;
-                }, function (error) {
-                    $scope.oauthResult = "OAUTH ERROR (see console)";
-                    console.log(error);
-                });
+                $scope.oauthResult = result;
+            }, function (error) {
+                $scope.oauthResult = "OAUTH ERROR (see console)";
+                console.log(error);
+            });
         };
 
     };
