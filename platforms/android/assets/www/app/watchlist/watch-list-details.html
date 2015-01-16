@@ -5,7 +5,7 @@
         </ion-nav-back-button>
         <ion-nav-title>
             <a class="button button-clear ion-ios7-location-outline"
-               ui-sref="tab.location-map({id:vm.itemId})">Map View </a>
+               ui-sref="tab.location-map({id:vm.itemId})" ng-click="vm.getLocation()">Map View </a>
         </ion-nav-title>
         <ion-nav-buttons side="right">
             <a class="button button-clear" ui-sref="refine"> Refine</a>

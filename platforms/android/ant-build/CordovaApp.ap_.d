@@ -154,11 +154,15 @@ C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\nearme\n
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\post\post-ctrl.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\post\post.html \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\post\sale-post.html \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\post\sale-post.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\post\select-store.html \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\post\share-post.html \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\Refine\refine-ctrl.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\Refine\refine.html \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\services\common \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\services\salePostDataApi.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\services\splitDealApi.js \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\services\common\commonStuff.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\settings\barcodeScanner.ctrl.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\settings\settings.html \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\signup\signup.html \
@@ -638,6 +642,7 @@ C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\ngCordov
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\ngCordova\dist\ng-cordova.min.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\com.ionic.keyboard \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\com.phonegap.plugins.barcodescanner \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\nl.x-services.plugins.toast \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.camera \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.device \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.inappbrowser \
@@ -645,6 +650,10 @@ C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\com.
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\com.ionic.keyboard\www\keyboard.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\com.phonegap.plugins.barcodescanner\www \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\com.phonegap.plugins.barcodescanner\www\barcodescanner.js \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\nl.x-services.plugins.toast\test \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\nl.x-services.plugins.toast\www \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\nl.x-services.plugins.toast\test\tests.js \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\nl.x-services.plugins.toast\www\Toast.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.camera\www \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\Camera.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraConstants.js \

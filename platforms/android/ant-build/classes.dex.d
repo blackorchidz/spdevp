@@ -25,6 +25,8 @@ C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\com\S
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\com\SplitDeal\R$string.class \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\com\SplitDeal\R$xml.class \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\com\SplitDeal\R.class \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\nl\xservices\plugins\Toast$1.class \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\nl\xservices\plugins\Toast.class \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\org\apache\cordova\camera\CameraLauncher.class \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\org\apache\cordova\camera\ExifHelper.class \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\org\apache\cordova\camera\FileHelper.class \

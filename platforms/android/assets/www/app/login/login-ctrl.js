@@ -1,38 +1,21 @@
 (function () {
     'use strict';
 
-    angular.module('SplitDealApp').controller('LoginCtrl', ['$scope', '$state', 'splitDealApi', LoginCtrl]);
+    angular
+        .module('SplitDealApp')
+        .controller('LoginCtrl', LoginCtrl);
 
-    var vm = this;
-    var users;
+    LoginCtrl.$inject = ['$state', 'commonStuff'];
 
-    function LoginCtrl($scope, $state, splitDealApi) {
+    function LoginCtrl($state, commonStuff) {
+        var vm = this;
 
-        splitDealApi.getUsersData().then(function (data) {
-            users = data;
-        });
+        vm.userLogin = userLogin;
 
-        $scope.userLogin = function (username, password) {
-
+        function userLogin() {
             console.log("userLogin Called");
             $state.go('tab.watchlist');
-
-//            console.log("number of Users " + users.Result[0].Username);
-//
-//            for (var i = 0; i < users.Count; i++) {
-//
-//                if (username == users.Result[i].Username && password == users.Result[i].Password ) {
-//                    console.log("success");
-//                }
-//                else {
-//                    console.log("false");
-//                }
-//            }
-
-            //console.log("user Login Is called"+username,password);
-            //console.log("Users lo"+users.Result);
+            commonStuff.bottomToastLong("Welcome !!");
         };
-
     }
-
 })();

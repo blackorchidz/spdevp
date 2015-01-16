@@ -3,7 +3,6 @@ angular
     ['ionic', 'ngCordova', 'uiGmapgoogle-maps', 'angular-data.DSCacheFactory'])
 
 
-
     .run(function ($ionicPlatform, DSCacheFactory) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default
