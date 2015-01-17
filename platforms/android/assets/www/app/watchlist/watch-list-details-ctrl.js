@@ -2,23 +2,22 @@
     'use strict';
     angular
         .module('SplitDealApp')
-        .controller('WatchListDetailCtrl',WatchListDetailCtrl);
+        .controller('WatchListDetailCtrl', WatchListDetailCtrl);
 
-    WatchListDetailCtrl.$inject = ['$stateParams', '$state', 'splitDealApi','$cordovaGeolocation','$scope'];
+    WatchListDetailCtrl.$inject = ['$stateParams', '$state', 'splitDealApi', '$cordovaGeolocation', '$scope'];
 
-    function WatchListDetailCtrl($stateParams, $state, splitDealApi,$cordovaGeolocation,$scope) {
+    function WatchListDetailCtrl($stateParams, $state, splitDealApi, $cordovaGeolocation, $scope) {
 
         var vm = this;
 
         vm.itemId = $stateParams.id;
-        vm.gotoRefine = gotoRefine ;
+        vm.gotoRefine = gotoRefine;
         vm.getLocation = getLocation;
 
-        splitDealApi.getMyWatchList().then(function (data) {
-
+        splitDealApi.getMyListing().then(function (data) {
             vm.itemDetail = _(data.Result).chain()
                 .find({'Id': vm.itemId})
-                .pick('ItemDescription', 'Location', 'ItemName', 'ModifiedAt')
+                .pick('Description', 'Title', 'Keyword', 'ModifiedAt')
                 .value();
         })
 
@@ -40,8 +39,5 @@
         function gotoRefine() {
             $state.go('refine');
         }
-
-
     }
-
 })();

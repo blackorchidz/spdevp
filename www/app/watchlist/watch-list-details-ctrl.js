@@ -2,16 +2,16 @@
     'use strict';
     angular
         .module('SplitDealApp')
-        .controller('WatchListDetailCtrl',WatchListDetailCtrl);
+        .controller('WatchListDetailCtrl', WatchListDetailCtrl);
 
-    WatchListDetailCtrl.$inject = ['$stateParams', '$state', 'splitDealApi','$cordovaGeolocation','$scope'];
+    WatchListDetailCtrl.$inject = ['$stateParams', '$state', 'splitDealApi', '$cordovaGeolocation', '$scope'];
 
-    function WatchListDetailCtrl($stateParams, $state, splitDealApi,$cordovaGeolocation,$scope) {
+    function WatchListDetailCtrl($stateParams, $state, splitDealApi, $cordovaGeolocation, $scope) {
 
         var vm = this;
 
         vm.itemId = $stateParams.id;
-        vm.gotoRefine = gotoRefine ;
+        vm.gotoRefine = gotoRefine;
         vm.getLocation = getLocation;
 
         splitDealApi.getMyListing().then(function (data) {

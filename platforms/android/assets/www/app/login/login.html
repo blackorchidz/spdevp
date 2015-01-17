@@ -15,14 +15,13 @@
             </div>
             <label class="item item-input">
                 <span class="input-label">Username</span>
-                <input type="text" placeholder="username" ng-model="userName"><br/>
+                <input type="text" placeholder="username" ng-model="User.uname"><br/>
             </label>
             <label class="item item-input">
                 <span class="input-label">Password</span>
-                <input type="password" placeholder="password" ng-model="userPassword">
+                <input type="password" placeholder="password" ng-model="User.upassword">
             </label>
-
-            <button class="button button-positive button-block" ng-click="vm.userLogin()">
+            <button class="button button-positive button-block" ng-click="vm.checkUserLogin(User)">
                 Sign In
             </button>
 

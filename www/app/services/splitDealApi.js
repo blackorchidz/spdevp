@@ -12,15 +12,27 @@
 
         var currentItemId;
 
-        self.myWatchListCache = DSCacheFactory.get("myWatchListCache");
+        self.myWatchlistCache = DSCacheFactory.get("myWatchlistCache");
+        self.myListingCache = DSCacheFactory.get("myListingCache");
 
-        self.myWatchListCache.setOptions({
+        self.myWatchlistCache.setOptions({
+            onExpire: function (key, value) {
+                getWatchlist().then(function () {
+                    console.log("Watchlist cache was automatically refreshed");
+                }, function () {
+                    console.log("Error in putting expired items back into the cache", new Date());
+                    self.myWatchlistCache.put(key, value);
+                });
+            }
+        });
+
+        self.myListingCache.setOptions({
             onExpire: function (key, value) {
                 getMyListing().then(function () {
-                    console.log("my watch list cache was automatically refreshed");
+                    console.log("my Listing cache was automatically refreshed");
                 }, function () {
-                    console.log("Error getting data, Putting expired items back into the cache", new Date());
-                    self.myWatchListCache.put(key, value);
+                    console.log("Error getting data, Putting expired items back into cache", new Date());
+                    self.myListingCache.put(key, value);
                 });
             }
         });
@@ -29,7 +41,7 @@
             getWatchlist: getWatchlist,
             getMyListing: getMyListing,
             setItemId: setItemId,
-            getUsersData: getUsersData
+            getLoginDetails: getLoginDetails
         };
         return serviceDetails;
 
@@ -40,45 +52,53 @@
         //get list of items on my Listing
         function getMyListing() {
             var deferred = $q.defer(),
-                cachekey = "watchlist",
-                myWatchlistData = self.myWatchListCache.get(cachekey);
+                cachekey = "myListing",
+                myListingData = self.myListingCache.get(cachekey);
 
-            if (myWatchlistData) {
-                console.log("Found data inside cache", myWatchlistData);
-                deferred.resolve(myWatchlistData);
+            if (myListingData) {
+                console.log("Found data inside cache", myListingData);
+                deferred.resolve(myListingData);
             } else {
-
                 $http.get("http://api.everlive.com/v1/IMregDJC77R1b1yM/MyListing/")
                     .success(function (data) {
-                        console.log("watchlist data is called via http");
-                        self.myWatchListCache.put(cachekey, data);
+                        console.log("my Listing data is called via http");
+                        self.myListingCache.put(cachekey, data);
                         deferred.resolve(data);
-
                     })
-                    .error(function () {
-                        alert("please try again no internet");
+                    .error(function (error, status) {
+                        //alert("please try again no internet");
                         console.log("Error via making http calls");
-                        deferred.reject();
+                        deferred.reject(error, status);
                     });
             }
             return deferred.promise;
         }
 
         function getWatchlist() {
-            var deferred = $q.defer();
-            $http.get("http://api.everlive.com/v1/IMregDJC77R1b1yM/Watchlist/")
-                .success(function (response) {
-                    deferred.resolve(response);
-                })
-                .error(function (error, status) {
-                    console.log("Error via making http calls Watchlist ");
-                    deferred.reject(error,status);
-                })
+            var deferred = $q.defer(),
+                cacheKey = "watchlist",
+                myWatchlistData = self.myWatchlistCache.get(cacheKey);
+            if (myWatchlistData) {
+                console.log("Found data inside cache", myWatchlistData);
+                deferred.resolve(myWatchlistData);
+            } else {
+                $http.get("http://api.everlive.com/v1/IMregDJC77R1b1yM/Watchlist/")
+                    .success(function (response) {
+                        console.log("my Watchlist data is called via http");
+                        self.myWatchlistCache.put(cacheKey, response);
+                        deferred.resolve(response);
+                    })
+                    .error(function (error, status) {
+                        //alert("please try again no internet");
+                        console.log("Error via making http calls Watchlist ");
+                        deferred.reject(error, status);
+                    });
+            }
             return deferred.promise;
         }
 
         //get all users data
-        function getUsersData() {
+        function getLoginDetails() {
             var deferred = $q.defer();
             $http.get("http://api.everlive.com/v1/IMregDJC77R1b1yM/Users/")
                 .success(function (data) {

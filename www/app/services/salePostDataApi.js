@@ -18,10 +18,8 @@
                 })
             return defer.promise;
         }
-
         return{
             createSalePost: createSalePost
         };
     }
-
 })();

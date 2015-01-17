@@ -15,11 +15,18 @@ angular
                 StatusBar.styleDefault();
             }
 
-            DSCacheFactory("myWatchListCache", {
+            DSCacheFactory("myListingCache", {
                 storageMode: "localStorage",
-                maxAge: 7000,
+                maxAge: 20000,
                 deleteOnExpire: "aggressive"
             });
+
+            DSCacheFactory("myWatchlistCache", {
+                storageMode: "localStorage",
+                maxAge: 20000,
+                deleteOnExpire: "aggressive"
+            });
+
             DSCacheFactory("staticCache", {storageMode: "localStorage"});
         });
     })
