@@ -9,7 +9,7 @@
         var defer = $q.defer();
 
         function createSalePost(postData) {
-            $http.post('http://api.everlive.com/v1/IMregDJC77R1b1yM/SalePosts', postData)
+            $http.post('http://api.everlive.com/v1/IMregDJC77R1b1yM/MyListing', postData)
                 .success(function (response) {
                     defer.resolve(response);
                 })

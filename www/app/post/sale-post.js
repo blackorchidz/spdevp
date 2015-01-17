@@ -12,8 +12,8 @@
 
         function saveSalePostData(SalePost) {
             salePostDataApi.createSalePost(SalePost);
-            commonStuff.bottomToastLong("Post saved successfully !");
-            $state.go('share-post');
+            //commonStuff.bottomToastLong("Post saved successfully !");
+            //$state.go('share-post');
         }
     }
 })();

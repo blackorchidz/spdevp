@@ -14,11 +14,10 @@
         vm.gotoRefine = gotoRefine ;
         vm.getLocation = getLocation;
 
-        splitDealApi.getMyWatchList().then(function (data) {
-
+        splitDealApi.getMyListing().then(function (data) {
             vm.itemDetail = _(data.Result).chain()
                 .find({'Id': vm.itemId})
-                .pick('ItemDescription', 'Location', 'ItemName', 'ModifiedAt')
+                .pick('Description', 'Title', 'Keyword', 'ModifiedAt')
                 .value();
         })
 
@@ -40,8 +39,5 @@
         function gotoRefine() {
             $state.go('refine');
         }
-
-
     }
-
 })();

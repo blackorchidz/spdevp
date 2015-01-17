@@ -15,7 +15,7 @@
         function userLogin() {
             console.log("userLogin Called");
             $state.go('tab.watchlist');
-            commonStuff.bottomToastLong("Welcome !!");
+            //commonStuff.bottomToastLong("Welcome !!");
         };
     }
 })();

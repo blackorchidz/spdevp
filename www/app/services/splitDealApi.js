@@ -16,17 +16,29 @@
 
         self.myWatchListCache.setOptions({
             onExpire: function (key, value) {
-                getMyWatchList().then(function () {
+                getMyListing().then(function () {
                     console.log("my watch list cache was automatically refreshed");
                 }, function () {
-                    console.log("Error getting data, Putting expired items back into the cache",new Date());
+                    console.log("Error getting data, Putting expired items back into the cache", new Date());
                     self.myWatchListCache.put(key, value);
                 });
             }
         });
 
-        //get list of items on watch list
-        function getMyWatchList() {
+        var serviceDetails = {
+            getWatchlist: getWatchlist,
+            getMyListing: getMyListing,
+            setItemId: setItemId,
+            getUsersData: getUsersData
+        };
+        return serviceDetails;
+
+        function setItemId(itemId) {
+            currentItemId = itemId;
+        }
+
+        //get list of items on my Listing
+        function getMyListing() {
             var deferred = $q.defer(),
                 cachekey = "watchlist",
                 myWatchlistData = self.myWatchListCache.get(cachekey);
@@ -36,7 +48,7 @@
                 deferred.resolve(myWatchlistData);
             } else {
 
-                $http.get("http://api.everlive.com/v1/IMregDJC77R1b1yM/Items/")
+                $http.get("http://api.everlive.com/v1/IMregDJC77R1b1yM/MyListing/")
                     .success(function (data) {
                         console.log("watchlist data is called via http");
                         self.myWatchListCache.put(cachekey, data);
@@ -52,8 +64,17 @@
             return deferred.promise;
         }
 
-        function setItemId(itemId) {
-            currentItemId = itemId;
+        function getWatchlist() {
+            var deferred = $q.defer();
+            $http.get("http://api.everlive.com/v1/IMregDJC77R1b1yM/Watchlist/")
+                .success(function (response) {
+                    deferred.resolve(response);
+                })
+                .error(function (error, status) {
+                    console.log("Error via making http calls Watchlist ");
+                    deferred.reject(error,status);
+                })
+            return deferred.promise;
         }
 
         //get all users data
@@ -70,11 +91,5 @@
                 });
             return deferred.promise;
         }
-
-        return{
-            getMyWatchList: getMyWatchList,
-            setItemId: setItemId,
-            getUsersData: getUsersData
-        };
     }
 })();
