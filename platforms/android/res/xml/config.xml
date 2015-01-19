@@ -20,12 +20,15 @@
     <feature name="Toast">
         <param name="android-package" value="nl.xservices.plugins.Toast" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
     <name>SplitDeal</name>
     <description>
         The Split Deal App.
     </description>
     <author email="prasanna@blackorchidz.com" href="http://www.blackorchidz.com/">
-      Blackorchidz
+        Blackorchidz
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -33,4 +36,7 @@
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="SplashScreen" value="splash" />
+    <preference name="SplashScreenDelay" value="3000" />
 </widget>

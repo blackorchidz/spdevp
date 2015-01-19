@@ -18,20 +18,18 @@
 
         vm.marker = {};
 
-        splitDealApi.getMyWatchList().then(function (data) {
-            //console.log("Location for watch",data.Result);
 
+        splitDealApi.getMyListing().then(function (data) {
+            //console.log("Location for watch",data.Result);
             //lodash
             vm.data = _.find(data.Result, {Id: vm.locationId});
-
             //console.log("Location for watch 2",vm.data);
-
             vm.marker = {
                 latitude: vm.data.Location.latitude,
                 longitude: vm.data.Location.longitude,
                 options: {
                     title: 'This is marker with specific lat long',
-                    animation:google.maps.Animation.BOUNCE,
+                    animation:google.maps.Animation.BOUNCE
                 },
                 showWindow: true
             };

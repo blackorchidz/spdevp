@@ -1,10 +1,38 @@
 angular
     .module('SplitDealApp',
-    ['ionic', 'ngCordova', 'uiGmapgoogle-maps', 'angular-data.DSCacheFactory'])
+    ['ionic', 'ngCordova', 'uiGmapgoogle-maps', 'angular-data.DSCacheFactory', 'openfb'])
 
 
-    .run(function ($ionicPlatform, DSCacheFactory) {
+    .run(function ($ionicPlatform, DSCacheFactory, $rootScope, OpenFB, $state) {
+
+        OpenFB.init('1579426462286870');
+
         $ionicPlatform.ready(function () {
+            $rootScope.sequentialBackButtonPresses = 0;
+            $ionicPlatform.onHardwareBackButton(function () {
+                event.preventDefault();
+                event.stopPropagation();
+                if ($rootScope.sequentialBackButtonPresses == 1) {
+                    alert('Closing application');
+                    $rootScope.sequentialBackButtonPresses = 0;
+                } else {
+                    alert('Press again to close application');
+                    $rootScope.sequentialBackButtonPresses++;
+                }
+            });
+
+            $rootScope.$on('$stateChangeStart', function (event, toState) {
+                if (toState.name !== "tab.watchlist" &&
+                    toState.name !== "app" && !$window.sessionStorage['fbtoken']) {
+                    $state.go('tab.watchlist');
+                    event.preventDefault();
+                }
+            });
+
+            $rootScope.$on('OAuthException', function () {
+                $state.go('tab.watchlist');
+            });
+
             // Hide the accessory bar by default
             // (remove this to show the accessory bar above the keyboard for form inputs)
             if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -17,13 +45,13 @@ angular
 
             DSCacheFactory("myListingCache", {
                 storageMode: "localStorage",
-                maxAge: 20000,
+                maxAge: 7000,
                 deleteOnExpire: "aggressive"
             });
 
             DSCacheFactory("myWatchlistCache", {
                 storageMode: "localStorage",
-                maxAge: 20000,
+                maxAge: 7000,
                 deleteOnExpire: "aggressive"
             });
 

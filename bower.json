@@ -6,7 +6,8 @@
     "angular-google-maps": "~2.0.12",
     "lodash": "~2.4.1",
     "ngCordova": "~0.1.9-alpha",
-    "angular-cache": "~3.2.4"
+    "angular-cache": "~3.2.4",
+    "openfb": "*"
   },
   "version": "0.0.0",
   "homepage": "https://github.com/prasannaboz/SplitDeal-Ionic",

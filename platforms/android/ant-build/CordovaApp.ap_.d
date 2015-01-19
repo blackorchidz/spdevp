@@ -124,6 +124,7 @@ C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\css \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\img \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\index.html \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\oauthcallback.html \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\app.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\app\custom-search \
@@ -182,6 +183,8 @@ C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\angular-
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\ionic \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\lodash \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\ngCordova \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\openfb \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\openfb-angular.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\angular\angular-csp.css \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\angular\angular.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\angular\angular.min.js \
@@ -640,12 +643,21 @@ C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\ngCordov
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\ngCordova\dist\ng-cordova-mocks.min.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\ngCordova\dist\ng-cordova.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\ngCordova\dist\ng-cordova.min.js \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\openfb\index.html \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\openfb\LICENSE \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\openfb\logoutcallback.html \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\openfb\oauthcallback.html \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\openfb\openfb.js \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\openfb\ratchet.css \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\openfb\README.md \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\lib\openfb\styles.css \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\com.ionic.keyboard \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\com.phonegap.plugins.barcodescanner \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\nl.x-services.plugins.toast \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.camera \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.device \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.inappbrowser \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.splashscreen \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\com.ionic.keyboard\www \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\com.ionic.keyboard\www\keyboard.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\com.phonegap.plugins.barcodescanner\www \
@@ -663,4 +675,6 @@ C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.device\www\device.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.inappbrowser\www \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.inappbrowser\www\inappbrowser.js \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.splashscreen\www \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\assets\www\plugins\org.apache.cordova.splashscreen\www\splashscreen.js \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\AndroidManifest.xml \

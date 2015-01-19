@@ -66,6 +66,13 @@ module.exports = [
     {
         "file": "plugins/nl.x-services.plugins.toast/test/tests.js",
         "id": "nl.x-services.plugins.toast.tests"
+    },
+    {
+        "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -78,7 +85,8 @@ module.exports.metadata =
     "org.apache.cordova.inappbrowser": "0.5.5-dev",
     "org.apache.cordova.camera": "0.3.4",
     "org.apache.cordova.geolocation": "0.3.11",
-    "nl.x-services.plugins.toast": "2.0.3"
+    "nl.x-services.plugins.toast": "2.0.3",
+    "org.apache.cordova.splashscreen": "0.3.5"
 }
 // BOTTOM OF METADATA
 });

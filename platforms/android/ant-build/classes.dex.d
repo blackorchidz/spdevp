@@ -45,5 +45,6 @@ C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\org\a
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser.class \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowserDialog.class \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppChromeClient.class \
+C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\classes\org\apache\cordova\splashscreen\SplashScreen.class \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\dexedLibs\classes-a8e4339f94c82a7b61cbd1b76ac9c506.jar \
 C:\Users\mkale\Documents\GitHub\spdevp\platforms\android\ant-build\dexedLibs\com.google.zxing.client.android.captureactivity-7dbf3db641de9bfd1ff19d839a0e6aaf.jar \
