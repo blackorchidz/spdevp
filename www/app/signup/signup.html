@@ -1,4 +1,4 @@
-<ion-view>
+<ion-view ng-controller="SignUpCtrl as vm">
     <ion-nav-bar>
         <ion-nav-back-button class="button-clear">
             <i class="ion-chevron-left"></i> back
@@ -9,12 +9,8 @@
         <div class="list">
             <div class="item item-divider item-positive">
                 Create an account <br/>
-
-                <p>
-                    Do u really want to remember an another</p>
-
-                <p> password?
-                </p>
+                <p>Do u really want to remember an another</p>
+                <p> password?</p>
             </div>
             <div class="item item-button-right">
                 Sign up with
@@ -22,42 +18,37 @@
                     <i class="icon ion-chevron-right"></i>
                 </a>
             </div>
-
             <div class="item item-divider item-positive">
-
-                <p>
-                    Or u can remember an another password :)
-                </p>
+                <p> Or u can remember an another password :) </p>
             </div>
-
             <label class="item item-input">
                 <span class="input-label">First Name</span>
-                <input type="text" placeholder="first name">
+                <input type="text" placeholder="first name" ng-model="user.FirstName">
             </label>
             <label class="item item-input">
                 <span class="input-label">Last Name</span>
-                <input type="text" placeholder="last name">
+                <input type="text" placeholder="last name" ng-model="user.LastName">
             </label>
             <label class="item item-input">
                 <span class="input-label">Email Id</span>
-                <input type="text" placeholder="email id">
+                <input type="text" placeholder="email id" ng-model="user.Email">
             </label>
             <label class="item item-input">
                 <span class="input-label">Username</span>
-                <input type="text" placeholder="username">
+                <input type="text" placeholder="username" ng-model="user.Username">
             </label>
             <label class="item item-input">
                 <span class="input-label">Password</span>
-                <input type="text" placeholder="password">
+                <input type="password" placeholder="password" ng-model="user.Password">
             </label>
             <label class="item item-input">
                 <span class="input-label">Confirm </span>
-                <input type="text" placeholder="confirm password">
+                <input type="password" placeholder="confirm password">
             </label>
-            <button class="button button-balanced    button-block">
+            <button class="button button-balanced button-block"
+                    ng-click="vm.signUp(user)">
                 Sign In
             </button>
-
         </div>
 
     </ion-content>

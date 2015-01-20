@@ -21,6 +21,29 @@
                 </button>
             </div>
         </div>
+        <div class="card">
+            <!--<div class="item item-checkbox">-->
+                <!--<h2>{{vm.following ? "Following" : "Not Following"}}</h2>-->
+                <!--<label class="checkbox">-->
+                    <!--<input type="checkbox" ng-model="vm.following">-->
+                <!--</label>-->
+            <!--</div>-->
+
+            <!--<div class="item item-toggle">-->
+                <!--<h2>{{vm.following ? "Following" : "Not Following"}}</h2>-->
+                <!--<label class="toggle toggle-energized">-->
+                    <!--<input type="checkbox" ng-model="vm.following">-->
+                    <!--<div class="track">-->
+                        <!--<div class="handle"></div>-->
+                    <!--</div>-->
+                <!--</label>-->
+            <!--</div>-->
+            <button class="button button-clear"
+                    ng-click="vm.toggleFollow()"
+                    ng-class="{'ion-star':vm.following,'ion-ios7-star-outline button-clear':!vm.following}">
+                {{vm.following ? "Favourite" : "Not Favourite"}}
+            </button>
+        </div>
 
         <div class="list" ng-model="vm.itemDetail">
             <div class="item">

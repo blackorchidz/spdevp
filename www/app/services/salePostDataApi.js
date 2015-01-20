@@ -5,8 +5,14 @@
         .factory("salePostDataApi", salePostDataApi);
     salePostDataApi.$inject = ['$http', '$q'];
 
+
     function salePostDataApi($http, $q) {
         var defer = $q.defer();
+
+        var postDetails = {
+            createSalePost: createSalePost
+        }
+        return postDetails;
 
         function createSalePost(postData) {
             $http.post('http://api.everlive.com/v1/IMregDJC77R1b1yM/MyListing', postData)
@@ -18,8 +24,5 @@
                 })
             return defer.promise;
         }
-        return{
-            createSalePost: createSalePost
-        };
     }
 })();

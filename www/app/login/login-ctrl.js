@@ -5,9 +5,9 @@
         .module('SplitDealApp')
         .controller('LoginCtrl', LoginCtrl);
 
-    LoginCtrl.$inject = ['$state', 'commonStuff', 'splitDealApi', 'OpenFB', '$location'];
+    LoginCtrl.$inject = ['$state', 'commonStuff', 'splitDealApi', 'OpenFB', '$location','loginApi'];
 
-    function LoginCtrl($state, commonStuff, splitDealApi, OpenFB, $location) {
+    function LoginCtrl($state, commonStuff, splitDealApi, OpenFB, $location, loginApi) {
         var userDetails = "";
         var userName = "";
         var userPassword = "";
