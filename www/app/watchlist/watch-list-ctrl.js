@@ -3,25 +3,33 @@
     angular
         .module('SplitDealApp')
         .controller('WatchListCtrl', WatchListCtrl);
-    WatchListCtrl.$inject = ['$state', 'splitDealApi', '$cordovaBarcodeScanner'];
+    WatchListCtrl.$inject = ['$state', 'splitDealApi', '$cordovaBarcodeScanner', '$scope'];
 
-    function WatchListCtrl($state, splitDealApi, $cordovaBarcodeScanner) {
+    function WatchListCtrl($state, splitDealApi, $cordovaBarcodeScanner, $scope) {
         var vm = this;
         vm.scanResult;
         vm.myListings;
         vm.watchlist;
         vm.scan = scan;
         vm.setItemId = setItemId;
+        vm.loadList = loadList;
 
-        splitDealApi.getWatchlist().then(function (data) {
-            vm.watchlist = data.Result;
-        });
+        loadList(false);
 
-        splitDealApi.getMyListing().then(function (data) {
-            vm.myListings = data.Result;
-        });
+        //pull to refresh
+        function loadList(forceRefresh) {
+            splitDealApi.getWatchlist(forceRefresh).then(function (data) {
+                vm.watchlist = data.Result;
+            }).finally(function () {
+                $scope.$broadcast('scroll.refreshComplete');
+            });
 
-
+            splitDealApi.getMyListing(forceRefresh).then(function (data) {
+                vm.myListings = data.Result;
+            }).finally(function(){
+                $scope.$broadcast('scroll.refreshComplete');
+            });
+        }
 
         function scan() {
             $cordovaBarcodeScanner.scan()

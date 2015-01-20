@@ -3,9 +3,7 @@ angular
     ['ionic', 'ngCordova', 'uiGmapgoogle-maps', 'angular-data.DSCacheFactory', 'openfb'])
 
 
-    .run(function ($ionicPlatform, DSCacheFactory, $rootScope, OpenFB, $state) {
-
-        OpenFB.init('1579426462286870');
+    .run(function ($ionicPlatform, DSCacheFactory, $rootScope) {
 
         $ionicPlatform.ready(function () {
             $rootScope.sequentialBackButtonPresses = 0;
@@ -19,18 +17,6 @@ angular
                     alert('Press again to close application');
                     $rootScope.sequentialBackButtonPresses++;
                 }
-            });
-
-            $rootScope.$on('$stateChangeStart', function (event, toState) {
-                if (toState.name !== "tab.watchlist" &&
-                    toState.name !== "app" && !$window.sessionStorage['fbtoken']) {
-                    $state.go('tab.watchlist');
-                    event.preventDefault();
-                }
-            });
-
-            $rootScope.$on('OAuthException', function () {
-                $state.go('tab.watchlist');
             });
 
             // Hide the accessory bar by default

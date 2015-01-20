@@ -49,12 +49,46 @@
             currentItemId = itemId;
         }
 
+        function getWatchlist(forceRefresh) {
+            if (typeof forceRefresh === "undefined") {
+                forceRefresh = false;
+            }
+            var deferred = $q.defer(),
+                cacheKey = "watchlist",
+                myWatchlistData = null;
+            if (!forceRefresh) {
+                myWatchlistData = self.myWatchlistCache.get(cacheKey);
+            }
+            if (myWatchlistData) {
+                console.log("Found data inside cache", myWatchlistData);
+                deferred.resolve(myWatchlistData);
+            } else {
+                $http.get("http://api.everlive.com/v1/IMregDJC77R1b1yM/Watchlist/")
+                    .success(function (response) {
+                        console.log("my Watchlist data is called via http");
+                        self.myWatchlistCache.put(cacheKey, response);
+                        deferred.resolve(response);
+                    })
+                    .error(function (error, status) {
+                        //alert("please try again no internet");
+                        console.log("Error via making http calls Watchlist ");
+                        deferred.reject(error, status);
+                    });
+            }
+            return deferred.promise;
+        }
+
         //get list of items on my Listing
-        function getMyListing() {
+        function getMyListing(forceRefresh) {
+            if (typeof forceRefresh === "undefined") {
+                forceRefresh = false;
+            }
             var deferred = $q.defer(),
                 cachekey = "myListing",
+                myListingData = null;
+            if (!forceRefresh) {
                 myListingData = self.myListingCache.get(cachekey);
-
+            }
             if (myListingData) {
                 console.log("Found data inside cache", myListingData);
                 deferred.resolve(myListingData);
@@ -74,28 +108,6 @@
             return deferred.promise;
         }
 
-        function getWatchlist() {
-            var deferred = $q.defer(),
-                cacheKey = "watchlist",
-                myWatchlistData = self.myWatchlistCache.get(cacheKey);
-            if (myWatchlistData) {
-                console.log("Found data inside cache", myWatchlistData);
-                deferred.resolve(myWatchlistData);
-            } else {
-                $http.get("http://api.everlive.com/v1/IMregDJC77R1b1yM/Watchlist/")
-                    .success(function (response) {
-                        console.log("my Watchlist data is called via http");
-                        self.myWatchlistCache.put(cacheKey, response);
-                        deferred.resolve(response);
-                    })
-                    .error(function (error, status) {
-                        //alert("please try again no internet");
-                        console.log("Error via making http calls Watchlist ");
-                        deferred.reject(error, status);
-                    });
-            }
-            return deferred.promise;
-        }
 
         //get all users data
         function getLoginDetails() {

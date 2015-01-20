@@ -13,6 +13,8 @@
     </ion-nav-title>
 
     <ion-content>
+        <ion-refresher pulling-text="pull to refresh.."
+                       on-refresh="vm.loadList(true)"></ion-refresher>
         <div class="list">
             <div class="item item-stable">
                 Welcome username | <a href="#" class="button button-small button-clear">Sign out</a>
